@@ -10,5 +10,6 @@ export default () => (
       use block
     </a>
     。
+    <h2>添加一个测试</h2>
   </p>
 );
