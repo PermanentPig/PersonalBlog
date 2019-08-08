@@ -82,15 +82,112 @@ export default {
   routes: [
     {
       path: '/',
-      component: '../layouts/BasicLayout',
+      component: '../layouts/BlankLayout',
       Routes: ['src/pages/Authorized'],
       authority: ['admin', 'user'],
       routes: [
         {
+          path: '/user',
+          component: '../layouts/UserLayout',
+          routes: [
+            {
+              path: '/user',
+              redirect: '/user/login',
+            },
+            {
+              name: 'login',
+              path: '/user/login',
+              component: './user/login',
+            },
+            {
+              name: 'register',
+              path: '/user/register',
+              component: './user/register',
+            },
+            {
+              component: '404',
+            },
+          ],
+        },
+        {
           path: '/',
-          name: 'welcome',
-          icon: 'smile',
-          component: './Welcome',
+          component: '../layouts/BasicLayout',
+          Routes: ['src/pages/Authorized'],
+          authority: ['admin', 'user'],
+          routes: [
+            {
+              path: '/personal',
+              name: 'personal',
+              icon: 'smile',
+              //component: './Welcome',
+              routes: [
+                {
+                  path: '/personal/test',
+                  name: 'test',
+                  component: './Welcome',
+                },
+                {
+                  path: '/personal/personalIntro',
+                  name: 'personalIntro',
+                  component: './personal/personalIntro',
+                },
+              ],
+            },
+            {
+              path: '/frontend',
+              name: 'frontend',
+              icon: 'smile',
+              //component: './Welcome',
+              routes: [
+                {
+                  path: '/frontend/test',
+                  name: 'test',
+                  component: './Welcome',
+                },
+                {
+                  path: '/frontend/personalIntro',
+                  name: 'personalIntro',
+                  component: './personal/personalIntro',
+                },
+              ],
+            },
+            {
+              path: '/backend',
+              name: 'backend',
+              icon: 'smile',
+              //component: './Welcome',
+              routes: [
+                {
+                  path: '/backend/test',
+                  name: 'test',
+                  component: './Welcome',
+                },
+                {
+                  path: '/backend/personalIntro',
+                  name: 'personalIntro',
+                  component: './personal/personalIntro',
+                },
+              ],
+            },
+            {
+              path: '/carlet',
+              name: 'carlet',
+              icon: 'smile',
+              //component: './Welcome',
+              routes: [
+                {
+                  path: '/carlet/test',
+                  name: 'test',
+                  component: './Welcome',
+                },
+                {
+                  path: '/carlet/personalIntro',
+                  name: 'personalIntro',
+                  component: './personal/personalIntro',
+                },
+              ],
+            },
+          ]
         },
         {
           component: './404',

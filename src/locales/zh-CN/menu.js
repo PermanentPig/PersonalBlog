@@ -47,4 +47,10 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+  'menu.personal': '关于我',
+  'menu.personal.test': '测试菜单',
+  'menu.personal.personalIntro': '个人简介',
+  'menu.frontend': '前端',
+  'menu.backend': '后端',
+  'menu.carlet': '鸡汤',
 };

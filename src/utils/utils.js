@@ -20,5 +20,12 @@ const isAntDesignProOrDev = () => {
 
   return isAntDesignPro();
 };
-
-export { isAntDesignProOrDev, isAntDesignPro, isUrl };
+const toQueryString = obj => {
+  if (obj && obj instanceof Object) {
+    const keys = Object.keys(obj);
+    const result = keys.map(item => `${item}=${obj[item]}`).join('&');
+    console.log(result);
+    return keys.map(item => `${item}=${obj[item]}`).join('&');
+  }
+}
+export { isAntDesignProOrDev, isAntDesignPro, isUrl, toQueryString };
